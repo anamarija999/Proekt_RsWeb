@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pPiqRdr2EWWGScVMMrN4/EcAQDUb+RozgvoZdaf/Luo3zy2tXwFHvh4UQTOKmE7CsQCgV0tbkwvrmFlb+0TEJg==",
+  "dgSpecHash": "j1y7FyovIbBIdKdREu/Cgoz3BSHLDp2s7MmqHEq6T3KulVNh4RpAW+gUwfpTP3Zw/A2P2bSlX6w5Ygt5LLjSxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Elexir\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj",
+  "projectFilePath": "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Proekt_RsWeb\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Trajkovska\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.15\\microsoft.aspnetcore.cryptography.internal.3.1.15.nupkg.sha512",
     "C:\\Users\\Trajkovska\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.15\\microsoft.aspnetcore.cryptography.keyderivation.3.1.15.nupkg.sha512",

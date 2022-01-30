@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Elexir\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj": {}
+    "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Proekt_RsWeb\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Elexir\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj": {
+    "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Proekt_RsWeb\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Elexir\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj",
+        "projectUniqueName": "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Proekt_RsWeb\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj",
         "projectName": "ElexirApp_RSWEB",
-        "projectPath": "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Elexir\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj",
+        "projectPath": "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Proekt_RsWeb\\ElexirApp_RSWEB\\ElexirApp_RSWEB.csproj",
         "packagesPath": "C:\\Users\\Trajkovska\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Elexir\\ElexirApp_RSWEB\\obj\\",
+        "outputPath": "C:\\Users\\Trajkovska\\Desktop\\Elexir\\Proekt_RsWeb\\ElexirApp_RSWEB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
