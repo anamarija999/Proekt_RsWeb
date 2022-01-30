@@ -1,0 +1,56 @@
+﻿@model ElexirApp_RSWEB.ViewModel.RezervacijaNaUsluga
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="font-style:italic;font-weight:bold; color:purple">Резервации</h1>
+
+<p>
+    <a style="color:black" asp-controller="Rezervacijas" asp-action="NewRezz">Направи резервација</a>
+</p>
+
+<form asp-controller="Rezervacijas" asp-action="Index" method="get">
+    <p>
+        <a>
+            <b>
+                Услуга:
+                </b>
+                </a>
+                <select asp-for="Usluga" asp-items="Model.UslugaMesto">
+                    <option value="">Сите</option>
+                </select>
+
+                <input class="input" type="submit" value="Филтрирај" />
+</p>
+</form>
+<table class="table input">
+    <thead class="input">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervacija[0].Usluga.Benefits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezervacija[0].Korisnik.FullName)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Rezervacija) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usluga.Benefits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Korisnik.FullName)
+            </td>
+            
+            <td>
+                <a style="color:black" asp-action="Delete" asp-route-id="@item.Id">Избриши</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,66 @@
+﻿@model ElexirApp_RSWEB.Models.Usluga
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h1>Податоци за услугата</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benefits)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benefits)
+        </dd>
+       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstEmployee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstEmployee.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SecondEmployee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SecondEmployee.FullName)
+        </dd>
+
+        <dt class="col-sm-2">
+            Корисници
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var korisnik in Model.Korisnici)
+            {
+                <a asp-controller="Korisniks" asp-action="Details" asp-route-id="@korisnik.KorisnikId">
+                    @korisnik.Korisnik.FullName
+                </a> <br />}
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a style="color:black" asp-action="Edit" asp-route-id="@Model.Id">Промени</a> |
+    <a style="color:black" asp-action="Index">Врати назад</a>
+</div>

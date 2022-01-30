@@ -1,0 +1,102 @@
+﻿@model ElexirApp_RSWEB.ViewModel.FiltrirajUslugi
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<body>
+
+    <h1 style="font-style:italic;font-weight:bold; color:purple">Услуги</h1>
+
+    <p>
+        <a style="color:black" asp-action="Create">Додади нова услуга</a>
+    </p>
+
+    
+    <form asp-controller="Uslugas" asp-action="Index" method="get">
+        <p>
+            <a><b>Филтрирај по Тип:</b></a>
+            
+            <select asp-for="Benefit" asp-items="Model.Benefits">
+                <option  value="">Сите</option>
+            </select>
+
+            <input class="input" type="submit"  value="Филтрирај" />
+        </p>
+    </form>
+
+
+    <table class="table input">
+        <thead class="input">
+            <tr  >
+                <th>
+                    @Html.DisplayNameFor(model => model.Uslugi[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uslugi[0].Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uslugi[0].Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uslugi[0].Benefits)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uslugi[0].FirstEmployee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uslugi[0].SecondEmployee)
+                </th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody >
+            @foreach (var item in Model.Uslugi)
+            {
+                <tr  style="border-color:black;border-style:double;">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Benefits)
+                    </td>
+                   
+
+                    <td>
+                        @if (item.FirstEmployeeId != null)
+                        {
+                            <a  asp-controller="Vrabotens" asp-action="Details" asp-route-id="@item.FirstEmployeeId"> @Html.DisplayFor(modelItem => item.FirstEmployee.FullName)</a>}
+                    </td>
+
+                    <td>
+                        @if (item.SecondEmployeeId != null)
+                        {
+                            <a  asp-controller="Vrabotens" asp-action="Details" asp-route-id="@item.SecondEmployeeId"> @Html.DisplayFor(modelItem => item.SecondEmployee.FullName)</a>}
+                    </td>
+                    <td>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <a style="color:black" asp-action="Edit" asp-route-id="@item.Id">Промени|</a>
+
+
+                            <a style="color:black" asp-action="Delete" asp-route-id="@item.Id">Избриши|</a>
+                        }
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Korisnik")))
+                        {
+                            <a style="color:black"  asp-action="Details" asp-route-id="@item.Id">Детали</a>
+                        }
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </body>

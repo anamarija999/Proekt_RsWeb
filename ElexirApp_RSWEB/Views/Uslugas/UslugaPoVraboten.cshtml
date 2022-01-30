@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ElexirApp_RSWEB.Models.Usluga>
+
+@{ ViewData["Title"] = "UslugaPoVraboten"; }
+
+
+    <h1 style="font-style:italic;font-weight:bold; color:purple">Услуги од</h1>
+    @{ var data = ViewBag.Message; }
+    <h6>
+        @data.FullName
+    </h6>
+    <table class="table">
+        <thead class="input">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Benefits)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstEmployee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondEmployee)
+                </th>
+
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="input">
+            @foreach (var item in Model)
+            {
+            <tr style="border-color:black;border-style:double;">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Benefits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstEmployee.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SecondEmployee.FullName)
+                </td>
+                <td>
+                    <a asp-controller="Rezervacijas" asp-action="KorisniciPoUsluga" asp-route-id="@item.Id">Корисник</a>
+                </td>
+            </tr>}
+        </tbody>
+    </table>

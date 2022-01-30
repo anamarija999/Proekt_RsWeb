@@ -1,0 +1,54 @@
+﻿@model ElexirApp_RSWEB.Models.Usluga
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Дали сте сигурни дека сакате да ја избришете услугата?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benefits)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benefits)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstEmployee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstEmployee.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SecondEmployee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SecondEmployee.FullName)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Избриши" class="btn btn-outline-secondary" /> |
+        <a style="color:black" asp-action="Index">Врати назад</a>
+    </form>
+</div>

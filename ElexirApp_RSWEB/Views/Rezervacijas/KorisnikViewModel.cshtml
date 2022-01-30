@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ElexirApp_RSWEB.Models.Rezervacija>
+
+
+@{ ViewData["Title"] = "KorisnikViewModel"; }
+
+
+<h1 style="font-style:italic;font-weight:bold; color:purple">Закажани услуги</h1>
+@{ var data = ViewBag.Message; }
+<h6> @data.FullName  </h6>
+
+<table class="table">
+    <thead class="input">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Usluga.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usluga.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usluga.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usluga.Benefits)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="input">
+        @foreach (var item in Model)
+        {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Usluga.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usluga.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usluga.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usluga.Benefits)
+            </td>
+
+            <td>
+                <a style="color:black" asp-action="Delete" asp-route-id="@item.Id">Откажи резервација</a>
+            </td>
+
+        </tr>}
+    
+        </tbody>
+</table>

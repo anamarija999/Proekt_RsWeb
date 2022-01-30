@@ -1,0 +1,28 @@
+﻿@model ElexirApp_RSWEB.Models.Rezervacija
+
+@{ ViewData["Title"] = "Delete"; }
+
+<h3>Дали сте сигурни дека сакате да ја избришете резервацијата?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Услуга
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usluga.Benefits)
+        </dd>
+        <dt class="col-sm-2">
+            Корисник
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Korisnik.FullName)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteRezz">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Избриши" class="btn btn-outline-secondary" /> |
+        <a style="color:black" asp-action="KorisnikViewModel">Bрати назад</a>
+    </form>
+</div>

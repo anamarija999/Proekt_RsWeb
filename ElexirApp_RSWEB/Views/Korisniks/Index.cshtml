@@ -1,0 +1,78 @@
+﻿@model ElexirApp_RSWEB.ViewModel.FiltrirajKorisnici
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="font-style:italic;font-weight:bold; color:purple">Корисници</h1>
+
+<p>
+    <a style="color:black" asp-action="Create">Додади нов корисник</a>
+</p>
+
+
+<p>
+    <a><b>Филтрирај по:</b></a>
+</p>
+
+<form asp-controller="korisniks" asp-action="Index" method="get">
+    <p>
+        Име: <input type="text" asp-for="StringName" />
+        Презиме: <input type="text" asp-for="StringSurname" />
+
+        <input class="input" type="submit" value="Филтрирај" />
+    </p>
+</form>
+
+<table class="table">
+    <thead class="input">
+        <tr>
+            <th>
+               
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Korisnici[0].Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Korisnici[0].Prezime)
+            </th>
+           
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="input">
+        @foreach (var item in Model.Korisnici)
+        {
+            <tr  style="border-color:black;border-style:double;">
+               <td>
+                    @if (item.ProfilePicture != null)
+                    {
+                        <img src="~/images/@item.ProfilePicture"
+                         class="rounded-circle"
+                         height="100" width="100"
+                         asp-append-version="true" /> }
+                                    else
+                                    {
+                    <img src="~/images/nopicture.jpg"
+                         class="rounded-circle"
+                         height="100" width="100"
+                         asp-append-version="true" />}
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prezime)
+                </td>
+               
+                
+                <td>
+                    <a style="color:black" asp-action="Edit" asp-route-id="@item.Id">Промени</a> |
+                    <a style="color:black" asp-action="Details" asp-route-id="@item.Id">Детали</a> |
+                    <a style="color:black" asp-action="Delete" asp-route-id="@item.Id">Избриши</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+</table>

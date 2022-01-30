@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ElexirApp_RSWEB.Models.Rezervacija>
+<h1>Закажани термини:</h1>
+@{ var data = ViewBag.Message; }
+<h1> @data.Benefits </h1>
+<table class="table">
+    <thead>
+        <tr>
+        
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @if (item.Korisnik.ProfilePicture != null)
+                {
+                    <img src="~/images/@item.Korisnik.ProfilePicture"
+                         class="rounded-circle"
+                         height="100" width="100"
+                         asp-append-version="true" /> }
+                else
+                {
+                    <img src="~/images/nopicture.jpg"
+                         class="rounded-circle"
+                         height="100" width="100"
+                         asp-append-version="true" />}
+            </td>
+            <td>
+                @if (item.Korisnik.FullName != null)
+                {
+                <a asp-controller="Vrabotens" asp-action="Details" asp-route-id="@item.KorisnikId">
+                    @Html.DisplayFor(modelItem => item.Korisnik.FullName)
+                </a>}
+            </td>
+           
+
+        </tr>}
+    </tbody>
+</table>
